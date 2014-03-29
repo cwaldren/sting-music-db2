@@ -1,15 +1,15 @@
-var stingMusicApp = angular.module('stingMusicApp', ['ngRoute', 'ngAnimate', 'stingMusicControllers']);
+var stingMusicApp = angular.module('stingMusicApp', ['ngRoute', 'ngAnimate']);
 
 stingMusicApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/view', {
         templateUrl: 'partials/music-view.html',
-        controller: 'ViewMusicController'
+        controller: 'ViewMusicCtrl'
       }).
       when('/add', {
         templateUrl: 'partials/add-view.html',
-        controller: 'AddMusicController'
+        controller: 'AddMusicCtrl'
       }).
       otherwise({
         redirectTo: '/view'
