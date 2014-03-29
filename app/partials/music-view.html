@@ -75,7 +75,7 @@
 			<p ng-repeat="track in album.tracks" ng-mouseover="revealLength()"><i>{{track.title}}</i> <small class="track-length">{{track.length}}</small></p>
 		</div>
 		<div class="small-6 large-7 columns hide-for-small">
-			<blockquote class="review">{{album.review}} <cite>Reviewer</cite>
+			<blockquote class="review">{{album.review}} <cite>{{album.reviewer}}</cite>
 			</blockquote>
 		</div>
 	</div>

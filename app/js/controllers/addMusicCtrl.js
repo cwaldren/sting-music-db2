@@ -2,7 +2,7 @@ angular.module('stingMusicApp')
 .controller('AddMusicCtrl', 
     ['$scope', '$timeout', function($scope, $timeout) {
 
-        $(document).foundation("section", "reflow")
+       // $(document).foundation("section", "reflow")
 
         $scope.newSong = {title:"", artist:"", album:"", genre:"", length:""};
         $scope.status = {message:""};

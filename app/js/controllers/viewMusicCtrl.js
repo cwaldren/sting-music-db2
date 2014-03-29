@@ -75,7 +75,7 @@
              
             $http.get("http://thesting.wdev.wrur.org/wp-content/themes/thesting/api/search/" + newValue).
                 success(function(data) {
-                    $scope.testAjaxData = data;
+                    $scope.albums = data;
             });
 
          });
