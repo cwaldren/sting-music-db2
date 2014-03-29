@@ -1,0 +1,315 @@
+[
+   {
+      "album":"The Cat",
+      "genre":"Meowspeak",
+      "year":"1978",
+      "artist":"Cat",
+      "pic":"http://placekitten.com/161/160",
+      "tracks":[
+         {
+            "title":"Death To All Mice",
+            "length":"2:34"
+         },
+         {
+            "title":"Death To All Mice",
+            "length":"2:34"
+         },
+         {
+            "title":"Death To No Mice",
+            "length":"2:34"
+         },
+         {
+            "title":"Death To asdas",
+            "length":"2:34"
+         },
+         {
+            "title":"Death To All Mice",
+            "length":"2:34"
+         },
+         {
+            "title":"Death To All Mice",
+            "length":"2:34"
+         },
+         {
+            "title":"Death To No Mice",
+            "length":"2:34"
+         },
+         {
+            "title":"Death To asdas",
+            "length":"2:34"
+         }
+      ],
+      "review":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consequat egestas sapien, at tempor dui iaculis et. In non mi vitae sapien tincidunt iaculis. Cras eu magna at orci rhoncus posuere. Vestibulum at nulla lorem. Fusce placerat ultricies odio. In hac habitasse platea dictumst. Nunc rhoncus enim iaculis adipiscing blandit. ",
+      "highlighted":false
+   },
+   {
+      "album":"The Mouse-2",
+      "genre":"Squeakspeak",
+      "year":"2022",
+      "artist":"Cat",
+      "pic":"http://placekitten.com/159/160",
+      "tracks":[
+         {
+            "title":"Monddey",
+            "length":"2:34"
+         },
+         {
+            "title":"Moasjdy 2",
+            "length":"2:34"
+         },
+         {
+            "title":"Mddoaney 3",
+            "length":"2:34"
+         },
+         {
+            "title":"Moasnsfey 4",
+            "length":"2:34"
+         }
+      ],
+      "review":"Maecenas dictum cursus tellus ut pulvinar. Morbi a ante et ipsum consequat accumsan a a metus. Duis quis elementum augue. Pellentesque felis libero, auctor a semper ut, tempor quis eros. Integer vitae orci congue, congue augue eget, auctor lacus. Proin a turpis mauris. Curabitur scelerisque urna ut nisi ultrices vestibulum. Nulla ac massa lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis convallis eu nisl vitae scelerisque. Mauris facilisis a ligula ut tempus.",
+      "highlighted":false
+   },
+   {
+      "album":"The Mouse-1",
+      "genre":"Squeakspeak",
+      "year":"2018",
+      "artist":"Cat",
+      "pic":"http://placekitten.com/160/159",
+      "tracks":[
+         {
+            "title":"Modsfney",
+            "length":"2:34"
+         },
+         {
+            "title":"Mohfney 2",
+            "length":"2:34"
+         },
+         {
+            "title":"Money 3",
+            "length":"2:34"
+         },
+         {
+            "title":"Moadgney 4",
+            "length":"2:34"
+         }
+      ],
+      "review":"Vivamus id libero ultricies, rutrum est bibendum, laoreet ligula. Nunc ac sapien leo. Nunc dapibus dui ac dolor mollis dignissim. ",
+      "highlighted":false
+   },
+   {
+      "album":"The Mouse0",
+      "genre":"Squeakspeak",
+      "year":"2020",
+      "artist":"Cat",
+      "pic":"http://placekitten.com/160/161",
+      "tracks":[
+         {
+            "title":"Modsfney",
+            "length":"2:34"
+         },
+         {
+            "title":"Mohfney 2",
+            "length":"2:34"
+         },
+         {
+            "title":"Money 3",
+            "length":"2:34"
+         },
+         {
+            "title":"Moadgney 4",
+            "length":"2:34"
+         }
+      ],
+      "review":"Vivamus id libero ultricies, rutrum est bibendum, laoreet ligula. Nunc ac sapien leo. Nunc dapibus dui ac dolor mollis dignissim. ",
+      "highlighted":false
+   },
+   {
+      "album":"The Mouse1",
+      "genre":"Squeakspeak",
+      "year":"2000",
+      "artist":"Cat",
+      "pic":"http://placekitten.com/161/160",
+      "tracks":[
+         {
+            "title":"Modsfney",
+            "length":"2:34"
+         },
+         {
+            "title":"Mohfney 2",
+            "length":"2:34"
+         },
+         {
+            "title":"Money 3",
+            "length":"2:34"
+         },
+         {
+            "title":"Moadgney 4",
+            "length":"2:34"
+         }
+      ],
+      "review":"Vivamus id libero ultricies, rutrum est bibendum, laoreet ligula. Nunc ac sapien leo. Nunc dapibus dui ac dolor mollis dignissim. ",
+      "highlighted":false
+   },
+   {
+      "album":"The Mouse2",
+      "genre":"Squeakspeak",
+      "year":"2020",
+      "artist":"Cat",
+      "pic":"http://placekitten.com/162/159",
+      "tracks":[
+         {
+            "title":"Modsfney",
+            "length":"2:34"
+         },
+         {
+            "title":"Mohfney 2",
+            "length":"2:34"
+         },
+         {
+            "title":"Money 3",
+            "length":"2:34"
+         },
+         {
+            "title":"Moadgney 4",
+            "length":"2:34"
+         }
+      ],
+      "review":"Vivamus id libero ultricies, rutrum est bibendum, laoreet ligula. Nunc ac sapien leo. Nunc dapibus dui ac dolor mollis dignissim. ",
+      "highlighted":false
+   },
+   {
+      "album":"The Mouse3",
+      "genre":"Squeakspeak",
+      "year":"2099",
+      "artist":"Aerosmith",
+      "pic":"http://placekitten.com/161/159",
+      "tracks":[
+         {
+            "title":"Modsfney",
+            "length":"2:34"
+         },
+         {
+            "title":"Mohfney 2",
+            "length":"2:34"
+         },
+         {
+            "title":"Money 3",
+            "length":"2:34"
+         },
+         {
+            "title":"Moadgney 4",
+            "length":"2:34"
+         }
+      ],
+      "review":"Vivamus id libero ultricies, rutrum est bibendum, laoreet ligula. Nunc ac sapien leo. Nunc dapibus dui ac dolor mollis dignissim. ",
+      "highlighted":false
+   },
+   {
+      "album":"The Mouse4",
+      "genre":"Squeakspeak",
+      "year":"2020",
+      "artist":"Cat",
+      "pic":"http://placekitten.com/160/161",
+      "tracks":[
+         {
+            "title":"Modsfney",
+            "length":"2:34"
+         },
+         {
+            "title":"Mohfney 2",
+            "length":"2:34"
+         },
+         {
+            "title":"Money 3",
+            "length":"2:34"
+         },
+         {
+            "title":"Moadgney 4",
+            "length":"2:34"
+         }
+      ],
+      "review":"Vivamus id libero ultricies, rutrum est bibendum, laoreet ligula. Nunc ac sapien leo. Nunc dapibus dui ac dolor mollis dignissim. ",
+      "highlighted":false
+   },
+   {
+      "album":"The Mouse5",
+      "genre":"Squeakspeak",
+      "year":"2020",
+      "artist":"Catdog",
+      "pic":"http://placekitten.com/162/160",
+      "tracks":[
+         {
+            "title":"Modsfney",
+            "length":"2:34"
+         },
+         {
+            "title":"Mohfney 2",
+            "length":"2:34"
+         },
+         {
+            "title":"Money 3",
+            "length":"2:34"
+         },
+         {
+            "title":"Moadgney 4",
+            "length":"2:34"
+         }
+      ],
+      "review":"Vivamus id libero ultricies, rutrum est bibendum, laoreet ligula. Nunc ac sapien leo. Nunc dapibus dui ac dolor mollis dignissim. ",
+      "highlighted":false
+   },
+   {
+      "album":"The Mouse6",
+      "genre":"Squeakspeak",
+      "year":"2020",
+      "artist":"Cat",
+      "pic":"http://placekitten.com/161/160",
+      "tracks":[
+         {
+            "title":"Modsfney",
+            "length":"2:34"
+         },
+         {
+            "title":"Mohfney 2",
+            "length":"2:34"
+         },
+         {
+            "title":"Money 3",
+            "length":"2:34"
+         },
+         {
+            "title":"Moadgney 4",
+            "length":"2:34"
+         }
+      ],
+      "review":"Vivamus id libero ultricies, rutrum est bibendum, laoreet ligula. Nunc ac sapien leo. Nunc dapibus dui ac dolor mollis dignissim. ",
+      "highlighted":false
+   },
+   {
+      "album":"The Moudse7",
+      "genre":"Squeakspeak",
+      "year":"2020",
+      "artist":"Kanye West",
+      "pic":"http://placekitten.com/160/160",
+      "tracks":[
+         {
+            "title":"Modsfney",
+            "length":"2:34"
+         },
+         {
+            "title":"Mohfney 2",
+            "length":"2:34"
+         },
+         {
+            "title":"Money 3",
+            "length":"2:34"
+         },
+         {
+            "title":"Moadgney 4",
+            "length":"2:34"
+         }
+      ],
+      "review":"Vivamus id libero ultricies, rutrum est bibendum, laoreet ligula. Nunc ac sapien leo. Nunc dapibus dui ac dolor mollis dignissim. ",
+      "highlighted":false
+   }
+]

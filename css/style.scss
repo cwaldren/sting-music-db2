@@ -1,0 +1,292 @@
+$font-stack: "Roboto Condensed", sans-serif;
+
+h2 {
+    font-family: $font-stack;
+}
+
+h3 {
+    font-family: $font-stack;
+    font-size: 14pt;
+}
+
+h4 {
+    font-family: $font-stack;
+    font-weight: lighter;
+}
+
+body {
+	overflow-y:scroll;
+}
+
+a {
+    font-family: $font-stack;
+}
+
+#add-songs-button {
+    float: right;   
+}
+.page-title {
+    text-align: center;
+}
+.button-group {
+	float:right;
+}
+
+.panel.ajax-output {
+	padding-top:6px;
+	padding-left:7px;
+	padding-bottom:10px;
+	margin-top:-15px;
+}
+#music th {
+    text-transform: capitalize;
+}
+
+#music-panel  {
+    text-align: center;
+    opacity:.4;
+}
+
+
+.panel table, small {
+    text-align:left;
+}
+
+.panel .label {
+    width:120%;
+    cursor:pointer;
+}
+
+
+
+#ajax-loader {
+    margin-top:12px;
+}
+
+//View Music Page CSS
+.track-length {
+    font-size:10pt;
+    float:right;
+}
+
+.panel {
+    font-family: $font-stack;
+}
+
+.panel li {
+	padding-top:1px;
+	padding-bottom:1px;
+}
+
+.panel ul {
+    list-style: none;
+}
+
+//Search mode
+
+.album-list-item {
+    margin-bottom:35px;
+    font-family: $font-stack;
+}
+
+.album-list-item p {
+	margin-bottom:0px;
+}
+
+.album-list-item h2 {
+	margin-bottom:-13px;
+    margin-top: -13px;
+}
+
+
+.album-list-item span {
+	width:100%;
+}
+
+//Grid mode
+#albums-grid  {
+
+    ul {
+	   margin-bottom:-15px;
+    }
+
+    img {
+        cursor:pointer;
+    }
+
+    .simple-album {
+        text-align: center;
+        font-size: 8pt;
+        font-family: $font-stack;
+    }
+
+    .simple-album.faded {
+        opacity: .40;
+    }
+
+   .simple-album h3 {
+        margin-bottom: -5px;
+    }
+
+    .simple-album.review  {
+        line-height:24px;
+    }
+
+    .panel {
+        text-align: left;
+    }
+
+    .simple-album.album-year {
+        position:relative;
+        left:65px;
+        bottom:79px;
+        color:white;
+        background-color:rgb(173, 52, 52);
+        padding-left:5px;
+        padding-right:5px;
+    }
+
+    .panel h2 {
+        margin-bottom: 0px
+    }
+} 
+
+
+#albumInfoPanel {
+    margin-bottom:30px;
+    -moz-box-shadow: -8px 8px 12px #888;
+    -webkit-box-shadow: -8px 8px 12px #888;
+    box-shadow: -8px 8px 12px #888;
+}
+
+ .review {
+     font-weight: lighter;
+}
+
+#status-message {
+	text-align:center;
+}
+
+
+.trapezoid { 
+	border-bottom: 21px solid #028E9B;
+	border-left: 21px solid transparent; 
+	border-right: 21px solid transparent;
+	height: 0; 
+	width: 90px;
+	-webkit-transform: rotate(-225deg);
+	 -moz-transform: rotate(-225deg); 
+	 -ms-transform: rotate(-225deg); 
+	 -o-transform: rotate(-225deg);
+
+	position:relative;
+	left:103px;
+	bottom:35px;
+
+}
+
+.trapezoid a {
+	-moz-transform:rotate(-182deg); /* Firefox */
+  -webkit-transform:rotate(-182deg); /* Webkit */        
+  -ms-transform:rotate(-182deg); /* IE */
+  -o-transform:rotate(-182deg); /* Opera */
+  transform:rotate(-182deg); /* future */
+  position:absolute;
+  color:white;
+  top:3px;
+  left:5%;
+  font-weight:bold;
+
+}
+
+.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:.3s;-moz-animation-duration:.3s;-ms-animation-duration:.3s;-o-animation-duration:.3s;animation-duration:.3s;}.animated.hinge{-webkit-animation-duration:.3s;-moz-animation-duration:.3s;-ms-animation-duration:.3s;-o-animation-duration:.3s;animation-duration:.3s;}@-webkit-keyframes flipInX {
+    0% {
+        -webkit-transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    } 40% {
+        -webkit-transform: perspective(400px) rotateX(-10deg);
+    }
+    
+    70% {
+        -webkit-transform: perspective(400px) rotateX(10deg);
+    }
+    
+    100% {
+        -webkit-transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+@-moz-keyframes flipInX {
+    0% {
+        -moz-transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+    
+    40% {
+        -moz-transform: perspective(400px) rotateX(-10deg);
+    }
+    
+    70% {
+        -moz-transform: perspective(400px) rotateX(10deg);
+    }
+    
+    100% {
+        -moz-transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+@-o-keyframes flipInX {
+    0% {
+        -o-transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+    
+    40% {
+        -o-transform: perspective(400px) rotateX(-10deg);
+    }
+    
+    70% {
+        -o-transform: perspective(400px) rotateX(10deg);
+    }
+    
+    100% {
+        -o-transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+@keyframes flipInX {
+    0% {
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+    
+    40% {
+        transform: perspective(400px) rotateX(-10deg);
+    }
+    
+    70% {
+        transform: perspective(400px) rotateX(10deg);
+    }
+    
+    100% {
+        transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+.flipInX {
+	-webkit-backface-visibility: visible !important;
+	-webkit-animation-name: flipInX;
+	-moz-backface-visibility: visible !important;
+	-moz-animation-name: flipInX;
+	-o-backface-visibility: visible !important;
+	-o-animation-name: flipInX;
+	backface-visibility: visible !important;
+	animation-name: flipInX;
+}
+
+.flipInX.ng-hide-add,
+.flipInX.ng-hide-remove,
+{
+    display: block!important;
+}

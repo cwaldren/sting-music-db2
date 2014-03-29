@@ -1,0 +1,96 @@
+<div class="row small-12 large-12 columns small-centered" style="margin-top:50px;">
+	
+    <div class="row">	
+		<a href="#/add" class="small button" id="add-songs-button">Add Songs or Albums</a>
+	</div>
+
+	<h2 class="page-title">View Music</h2>
+
+	<div class="row">
+		<div class="large-4 columns small-centered">
+			<input ng-model="search" ng-change="settings.searching = search != ''" type="text" placeholder="Search...">
+        </div>
+
+        
+        <ul ng-if="settings.searching">
+            <li ng-repeat="thing in testAjaxData">{{thing.trackname}}</li>
+        </ul>
+	</div>
+
+	<div class="row">
+		<div class="large-4 columns small-centered" style="text-align:center; margin-bottom:15px">
+			<button class="button secondary small" ng-click="sortBy('year')" style='-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;'unselectable='on'>
+            Sort by Year</button>
+		</div>
+	</div>
+
+    <h2 id="status-message" ng-if="!settings.fetchDataSuccess">Sorry, I couldn't fetch the album data :(</h2>
+
+	<!-- Album View -->
+	<div id="albums-grid" ng-show="!settings.searching">
+    	<div ng-repeat="albumGroup in brokenAlbums">
+    		<ul class="large-block-grid-5">
+    			<li class="simple-album" ng-class="{faded: !album.highlighted && settings.albumHighlighted}" ng-repeat="album in albumGroup" ng-click="selectAlbum($index, $parent.$index)">
+    				
+                    <img ng-src="{{album.pic}}">
+    				<h3>{{album.album}}</h3>
+    				<h4>{{album.artist}}</h4>
+              <!--  <i class="album-year">{{album.year}}</i> -->
+    			</li>
+    		</ul>
+
+    		<div id="albumInfoPanel" class="panel" ng-class="{'animated flipInX' : shouldShowPanel($index), '':!shouldShowPanel($index)}" ng-show="shouldShowPanel($index)">
+                <div class="row">
+                    <div class="small-3 columns">
+                        <ul class="square">
+                            <li ng-repeat="track in settings.currentAlbum.tracks">
+                                <a>{{track.title}}</a>
+                                <i class="track-length">{{track.length}}</i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="small-9 columns">
+                        <p class="review">
+                            {{settings.currentAlbum.review}}
+                        </p>
+                    </div>
+                </div>
+    		</div>
+    	</div>
+	</div>
+</div>
+		
+	
+
+
+
+
+	<div class="row album-list-item" ng-repeat="album in albums"  ng-show="settings.searching">
+		<div class="small-4 large-2 columns">
+			<img ng-src="{{album.pic}}"></img>
+			<span class="button tiny secondary show-for-small">Read Review</span>
+		</div>
+		<div class="small-8 large-3 columns">
+			<h2>{{album.album}}</h2><h4>{{album.artist}} — <i>{{album.year}}</i></h4>
+			<p ng-repeat="track in album.tracks" ng-mouseover="revealLength()"><i>{{track.title}}</i> <small class="track-length">{{track.length}}</small></p>
+		</div>
+		<div class="small-6 large-7 columns hide-for-small">
+			<blockquote class="review">{{album.review}} <cite>Reviewer</cite>
+			</blockquote>
+		</div>
+	</div>
+
+<!-- 
+	fade the other albums when click -->
+
+
+
+
+			<!-- <a href data-dropdown="add-dropdown" class="small secondary radius button dropdown" id="add-button">Add</a>
+			<ul id="add-dropdown" data-dropdown-content class="f-dropdown">
+				<li><a ng-click="config.addTrack = true" href="#">Track</a></li>
+				<li><a href="#">Album</a></li>
+			</ul> -->
+
+		</div>
+

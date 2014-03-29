@@ -1,0 +1,17 @@
+<div class="panel" ng-show="settings.albumHighlighted">
+            <div class="row">
+                <div class="small-3 columns">
+                    <ul class="square">
+                        <li ng-repeat="track in settings.currentAlbum.tracks">
+                        <a>{{track.title}}</a>
+                        <i class="track-length">{{track.length}}</i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="small-9 columns">
+                <p class="review">
+                {{settings.currentAlbum.review}}
+                </p>
+                </div>
+            </div>
+</div>

@@ -1,0 +1,67 @@
+
+
+<div class="row small-12 large-6" style="margin-top:50px;">
+
+<a href="#/view" href="#" class="small button">Back to View</a>
+
+<div id ="music-panel">
+<h3>Saved Albums</h3>
+		<table id="music">
+			<thead>
+				<tr>
+					<th ng-repeat="field in fields" width="{{field.width}}">{{field.name}}</th>
+				</tr>
+				<tbody>
+				<tr ng-repeat="song in recentlyAddedSongs">
+					<td>{{song.title}}</td>
+					<td>{{song.artist}}</td>
+					<td>{{song.album}}</td>
+					<td>{{song.genre}}</td>
+					<td>{{song.length}}</td>
+				</tr>
+			</tbody>
+			</thead>
+		</table>
+		<i id="status" ng-show="status.message">{{status.message}}</i>
+		<div id="ajax-loader" ng-show="status.message == 'working'" class="row"><img src="../sting-music-db/img/loader.GIF"></img></div>
+</div>
+<!-- Begin Track Input -->
+<!-- <div class="panel"> -->
+<h3>Add an album</h3>
+	<div class="section-container auto" data-section>
+		<section class="active">
+		<p class="title" data-title><a>One song at a time</a></p>
+			<div ng-cloak class="content"  data-section-content>
+				<form name="add_music_form" novalidate id="musicForm" ng-class="formValidAnimation">
+				<div class="row">
+					<div ng-form="subForm" ng-repeat="field in fields" class="{{field.inputWidth}} columns"> 
+							<input ng-class="{error: subForm.$dirty && subForm.$invalid}" type="text" name="{{field.name}}" placeholder="{{field.placeholder}}" ng-maxlength={{field.maxLength}} ng-model="newSong[field.name]" ng-required="{{field.required}}" ng-pattern="{{field.pattern}}"/>
+						
+						<div class="error" ng-show="subForm.$dirty && subForm.$invalid"/>
+							<small class="error" ng-if="field.name == 'length'" ng-show="subForm.$error.pattern">
+								mm:ss
+							</small>
+							<small class="error" ng-show="subForm.$error.required">
+								Required
+							</small>
+						</div>
+					</div>
+				</div>
+				</form>
+			</div>
+		</section>
+		<section>
+			<p class="title" data-tile><a>Multiple songs</a></p>
+				
+		</section>
+	</div>
+
+		<div id = "addButton" ng-show="add_music_form.$valid" class="button success expand" ng-click="addSong()">Add?</div>
+		<!-- End Track Input -->
+
+
+			
+
+<!-- </div> -->
+
+</div>
