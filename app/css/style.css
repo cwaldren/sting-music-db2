@@ -45,7 +45,9 @@ a {
   cursor: pointer; }
 
 #ajax-loader {
-  margin-top: 12px; }
+  margin-top: 12px; 
+  margin-left: 50%;
+}
 
 .track-length {
   font-size: 10pt;
