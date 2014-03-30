@@ -11,19 +11,24 @@
             fetchDataSuccess: true,
             sortByYearReverse: false,
         }
-    
-
-        $http({method: 'GET', url: 'js/albums.json'}).
-        success(function(data, status, headers, config) {
-            $scope.albums = data;
-            //Break the albums into a 2d array so it can be displayed correctly because angularjs is terrible
+        
+        $http.get("http://thesting.wdev.wrur.org/wp-content/themes/thesting/api/albums")
+        .success(function(data) {
             $scope.brokenAlbums = breakIntoRows(data);
-
-        }).
-        error(function(data, status, headers, config) {
-            console.log("failed")
-            $scope.settings.fetchDataSuccess = false;
+                
         });
+
+        // $http({method: 'GET', url: 'js/albums.json'}).
+        // success(function(data, status, headers, config) {
+        //     $scope.albums = data;
+        //     //Break the albums into a 2d array so it can be displayed correctly because angularjs is terrible
+        //     $scope.brokenAlbums = breakIntoRows(data);
+
+        // }).
+        // error(function(data, status, headers, config) {
+        //     console.log("failed")
+        //     $scope.settings.fetchDataSuccess = false;
+        // });
 
 
         var breakIntoRows = function(data) {
