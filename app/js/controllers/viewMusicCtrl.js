@@ -14,6 +14,7 @@
         
         $http.get("http://thesting.wdev.wrur.org/wp-content/themes/thesting/api/albums")
         .success(function(data) {
+            console.log(data)
             $scope.brokenAlbums = breakIntoRows(data);
                 
         });
