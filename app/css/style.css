@@ -51,7 +51,7 @@ a {
 
 .track-length {
   font-size: 10pt;
-  float: right; }
+  opacity: .4; }
 
 .panel {
   font-family: "Roboto Condensed", sans-serif; }

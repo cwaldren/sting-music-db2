@@ -1,6 +1,6 @@
  angular.module('stingMusicApp')
  .controller('ViewMusicCtrl', 
-    ['$scope', '$timeout','$filter','$http', '$location', function($scope, $timeout, $filter, $http, $location) {
+    ['$scope', '$timeout','$filter','$http', '$location', '$anchorScroll', function($scope, $timeout, $filter, $http, $location, $anchorScroll) {
 
 
         $scope.settings = {
@@ -35,10 +35,12 @@
         var breakIntoRows = function(data) {
             return $filter('group')(data, 5);
         }
-
+        $scope.$on('$locationChangeStart', function(ev) {
+          ev.preventDefault();
+        });
         //The method that gets called when an album is clicked
         $scope.selectAlbum = function(index, parentIndex) {
-        
+            
             //Helper variable to cut down on complexity
             var album = $scope.brokenAlbums[parentIndex][index];
 
@@ -50,11 +52,18 @@
 
             $scope.settings.albumHighlighted = album.highlighted;
 
+
             //Make every album but the highlighted one unhighlighted
-            for (var x = 0; x < $scope.brokenAlbums.length; x++) 
-                for (var y = 0; y < $scope.brokenAlbums[x].length; y++) 
-                    if ($scope.brokenAlbums[x][y] != album) 
+            for (var x = 0; x < $scope.brokenAlbums.length; x++)  {
+                for (var y = 0; y < $scope.brokenAlbums[x].length; y++) {
+                    if ($scope.brokenAlbums[x][y] != album) {
                         $scope.brokenAlbums[x][y].highlighted = false;
+                    }
+                }
+            }
+            $location.hash(album.id)
+            $anchorScroll();
+           
 
                     
         }
@@ -81,7 +90,7 @@
              
             $http.get("http://thesting.wdev.wrur.org/wp-content/themes/thesting/api/search/" + newValue).
                 success(function(data) {
-                    $scope.albums = data;
+                        $scope.albums = data;
             });
 
          });

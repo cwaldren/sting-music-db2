@@ -26,7 +26,7 @@
 	<div id="albums-grid" ng-show="!settings.searching">
     	<div ng-repeat="albumGroup in brokenAlbums">
     		<ul class="large-block-grid-5">
-    			<li class="simple-album" ng-class="{faded: !album.highlighted && settings.albumHighlighted}" ng-repeat="album in albumGroup" ng-click="selectAlbum($index, $parent.$index)">
+    			<li id="{{album.id}}"class="simple-album" ng-class="{faded: !album.highlighted && settings.albumHighlighted}" ng-repeat="album in albumGroup" ng-click="selectAlbum($index, $parent.$index, album.id)">
     				
                     <img ng-src="{{album.pic}}">
     				<h3>{{album.album}}</h3>
