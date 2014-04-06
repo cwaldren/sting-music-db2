@@ -24,22 +24,17 @@
 
 	<!-- Album View -->
 	<div id="albums-grid" ng-show="!settings.searching">
-    	<div ng-repeat="albumGroup in brokenAlbums">
-    		<ul class="large-block-grid-5">
-    			<li id="{{album.id}}"class="simple-album" ng-class="{faded: !album.highlighted && settings.albumHighlighted}" ng-repeat="album in albumGroup" ng-click="selectAlbum($index, $parent.$index, album.id)">
-    				
-                    <img ng-src="{{album.pic}}">
-    				<h3>{{album.album}}</h3>
-    				<h4>{{album.artist}}</h4>
-              <!--  <i class="album-year">{{album.year}}</i> -->
-    			</li>
-    		</ul>
 
-    		<div id="albumInfoPanel" class="panel" ng-class="{'animated flipInX' : shouldShowPanel($index), '':!shouldShowPanel($index)}" ng-show="shouldShowPanel($index)">
-                <div class="row">
+        <div id="{{album.id}}" ng-repeat-start="album in albums" class="simple-album" ng-click="selectAlbum(album)">
+            <img ng-src="{{album.pic}}">
+            <h3>{{album.album}}</h3> <em>{{album.artist}}</em>
+        </div>
+        <div ng-repeat-end class="panel" id="albumInfoPanel" ng-if="settings.selected && isCorrectRow(album)" ng-repeat-end>
+            
+            <div class="row">
                     <div class="small-3 columns">
                         <ul class="square">
-                            <li ng-repeat="track in settings.currentAlbum.tracks">
+                            <li ng-repeat="track in settings.selected.tracks">
                                 <a>{{track.trackname}}</a>
                                 <i class="track-length">{{track.tracktime}}</i>
                             </li>
@@ -47,14 +42,13 @@
                     </div>
                     <div class="small-9 columns">
                         <p class="review">
-                            {{settings.currentAlbum.review || 'No Review'}}
+                            {{settings.selected.review || 'No Review'}}
                             <br>
-                            <cite style="float:right;" ng-if="settings.currentAlbum.reviewer">{{settings.currentAlbum.reviewer}}</cite>
+                            <cite style="float:right;" ng-if="settings.selected.reviewer">{{settings.selected.reviewer}}</cite>
                         </p>
                     </div>
                 </div>
-    		</div>
-    	</div>
+        </div>
 	</div>
 </div>
 		

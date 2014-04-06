@@ -4,6 +4,7 @@
 
 
         $scope.settings = {
+            selected: false,
             albumHighlighted : false,
             currentAlbum: null,
             currentAlbumDepth: 0,
@@ -15,9 +16,11 @@
         $http.get("http://thesting.wdev.wrur.org/wp-content/themes/thesting/api/albums")
         .success(function(data) {
             console.log(data)
-            $scope.brokenAlbums = breakIntoRows(data);
+            $scope.albums = data;
                 
         });
+
+
 
         // $http({method: 'GET', url: 'js/albums.json'}).
         // success(function(data, status, headers, config) {
@@ -31,39 +34,39 @@
         //     $scope.settings.fetchDataSuccess = false;
         // });
 
+        $scope.isCorrectRow = function(album) {
+            var index = $scope.albums.indexOf(album) + 1;
+            var selectedIndex = $scope.albums.indexOf($scope.settings.selected);
 
-        var breakIntoRows = function(data) {
-            return $filter('group')(data, 5);
+            var col = Math.floor(index / 5);
+            var row = index % 5;
+            var lowerBound = (index - 1) - ((index - 1) % 5);
+
+            return ((row === 0) || (index === $scope.albums.length)) &&
+            ((selectedIndex >= lowerBound) && (selectedIndex < index))
+
         }
+
+        // var breakIntoRows = function(data) {
+        //     return $filter('group')(data, 5);
+        // }
         $scope.$on('$locationChangeStart', function(ev) {
           ev.preventDefault();
         });
-        //The method that gets called when an album is clicked
-        $scope.selectAlbum = function(index, parentIndex) {
-            
-            //Helper variable to cut down on complexity
-            var album = $scope.brokenAlbums[parentIndex][index];
+     
 
-            $scope.settings.currentAlbum = album;
-            $scope.settings.currentAlbumDepth = parentIndex;
-
-            //Swap the highlighted value
-            album.highlighted = !album.highlighted;
-
-            $scope.settings.albumHighlighted = album.highlighted;
-
-
-            //Make every album but the highlighted one unhighlighted
-            for (var x = 0; x < $scope.brokenAlbums.length; x++)  {
-                for (var y = 0; y < $scope.brokenAlbums[x].length; y++) {
-                    if ($scope.brokenAlbums[x][y] != album) {
-                        $scope.brokenAlbums[x][y].highlighted = false;
-                    }
-                }
+        $scope.selectAlbum = function(album) {
+             if ($scope.settings.selected === album) {
+                  $scope.settings.selected = false;
+                  return;
             }
-            $location.hash(album.id)
-            $anchorScroll();
+    
+    
+           $scope.settings.selected = album;
+          
+
            
+        
 
                     
         }
