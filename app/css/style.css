@@ -71,15 +71,21 @@ a {
   margin-bottom: 0px; }
 
 .album-list-item h2 {
-  margin-bottom: -13px;
-  margin-top: -13px; }
+  margin-bottom: -4px;
+  margin-top: -3px;
+  font-size: 17pt;
+  line-height: 23px; }
 
 .album-list-item span {
   width: 100%; }
+#container {
+  margin-top:50px;
+  text-align: center;
+  width:100%;
+}
 #albums-grid {
- position:relative;
- margin-left:20%;
-  margin: 0 auto;
+  display:inline-block;
+  width: 800px;
 }
 #albums-grid ul {
   margin-bottom: -15px; }
@@ -96,7 +102,7 @@ a {
 #albums-grid .simple-album.faded {
   opacity: .40; }
 #albums-grid .simple-album h3 {
-  margin-bottom: -5px; font-size:10pt;}
+  margin-bottom: 2px; font-size:10pt; line-height:13px;}
 #albums-grid .simple-album.review {
   line-height: 24px; }
 #albums-grid .panel {

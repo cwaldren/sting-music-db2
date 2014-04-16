@@ -1,4 +1,4 @@
-<div class="row small-12 large-12 columns small-centered" style="margin-top:50px;">
+<div class="row small-12 large-12 columns small-centered"  id="container">
 	
     <div class="row">	
 		<a href="#/add" class="small button" id="add-songs-button">Add Songs or Albums</a>
@@ -25,7 +25,7 @@
 	<!-- Album View -->
 	<div id="albums-grid" ng-show="!settings.searching">
 
-        <div id="{{album.id}}" ng-repeat-start="album in albums" class="simple-album" ng-click="selectAlbum(album)">
+        <div id="{{album.id}}" ng-repeat-start="album in albums" class="simple-album" ng-class="{faded: settings.selected && settings.selected != album}" ng-click="selectAlbum(album)">
             <img ng-src="{{album.pic}}">
             <h3>{{album.album}}</h3> <em>{{album.artist}}</em>
         </div>
