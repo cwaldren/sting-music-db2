@@ -47,9 +47,6 @@
 
         }
 
-        // var breakIntoRows = function(data) {
-        //     return $filter('group')(data, 5);
-        // }
         $scope.$on('$locationChangeStart', function(ev) {
           ev.preventDefault();
         });
@@ -61,13 +58,7 @@
                   return;
             }
     
-    
            $scope.settings.selected = album;
-          
-
-           
-        
-
                     
         }
 
@@ -87,13 +78,19 @@
             
         }
 
+   
+
          $scope.$watch('search', function(newValue, oldValue) {
              if (oldValue == newValue || newValue == "") 
                 return;
              
             $http.get("http://thesting.wdev.wrur.org/wp-content/themes/thesting/api/search/" + newValue).
-                success(function(data) {
-                        $scope.albums = data;
+                success(function(data) {   
+                   if (!angular.equals($scope.albums, data))
+                    $scope.albums = data;
+                   
+                    
+                
             });
 
          });

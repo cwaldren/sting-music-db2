@@ -1,8 +1,8 @@
 <div class="row small-12 large-12 columns small-centered"  id="container">
 	
-    <div class="row">	
+   <!--  <div class="row">	
 		<a href="#/add" class="small button" id="add-songs-button">Add Songs or Albums</a>
-	</div>
+	</div> -->
 
 	<h2 class="page-title">View Music</h2>
 
@@ -35,7 +35,7 @@
                     <div class="small-3 columns">
                         <ul class="square">
                             <li ng-repeat="track in settings.selected.tracks">
-                                <a>{{track.trackname}}</a>
+                                <a target="_blank" href="https://www.youtube.com/results?search_query={{track.trackname + ' ' + settings.selected.artist}}">{{track.trackname}}</a>
                                 <i class="track-length">{{track.tracktime}}</i>
                             </li>
                         </ul>

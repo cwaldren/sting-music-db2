@@ -16,10 +16,11 @@ stingMusicApp.config(['$routeProvider',
       });
   }]);
 
-stingMusicApp.run(function($rootScope) {
+stingMusicApp.run(function($rootScope, $location, $anchorScroll, $routeParams) {
     $rootScope.$on('$viewContentLoaded', function () {
         $(document).foundation();
     });
+   
 });
 
 stingMusicApp.directive('ngAlbumInfo', function() {

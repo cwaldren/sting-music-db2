@@ -10,7 +10,7 @@ h4 {
   font-weight: lighter; }
 
 body {
-  overflow-y: scroll; }
+ overflow-y:scroll;margin-bottom:500px;}
 
 a {
   font-family: "Roboto Condensed", sans-serif; }
@@ -79,7 +79,7 @@ a {
 .album-list-item span {
   width: 100%; }
 #container {
-  margin-top:50px;
+
   text-align: center;
   width:100%;
 }
