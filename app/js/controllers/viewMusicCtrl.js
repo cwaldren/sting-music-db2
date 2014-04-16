@@ -2,6 +2,7 @@
  .controller('ViewMusicCtrl', 
     ['$scope', '$timeout','$filter','$http', '$location', '$anchorScroll', function($scope, $timeout, $filter, $http, $location, $anchorScroll) {
 
+        $scope.searchedAlbums = [];
 
         $scope.settings = {
             selected: false,
@@ -17,22 +18,9 @@
         .success(function(data) {
             console.log(data)
             $scope.albums = data;
+           
                 
         });
-
-
-
-        // $http({method: 'GET', url: 'js/albums.json'}).
-        // success(function(data, status, headers, config) {
-        //     $scope.albums = data;
-        //     //Break the albums into a 2d array so it can be displayed correctly because angularjs is terrible
-        //     $scope.brokenAlbums = breakIntoRows(data);
-
-        // }).
-        // error(function(data, status, headers, config) {
-        //     console.log("failed")
-        //     $scope.settings.fetchDataSuccess = false;
-        // });
 
         $scope.isCorrectRow = function(album) {
             var index = $scope.albums.indexOf(album) + 1;
@@ -46,10 +34,6 @@
             ((selectedIndex >= lowerBound) && (selectedIndex < index))
 
         }
-
-        $scope.$on('$locationChangeStart', function(ev) {
-          ev.preventDefault();
-        });
      
 
         $scope.selectAlbum = function(album) {
@@ -86,12 +70,11 @@
              
             $http.get("http://thesting.wdev.wrur.org/wp-content/themes/thesting/api/search/" + newValue).
                 success(function(data) {   
-                   if (!angular.equals($scope.albums, data))
-                    $scope.albums = data;
-                   
-                    
-                
-            });
-
+                    if (!angular.equals($scope.searchedAlbums, data)) {
+                        $scope.searchedAlbums = data;       
+                    } 
+                });
          });
+
+
  }]);

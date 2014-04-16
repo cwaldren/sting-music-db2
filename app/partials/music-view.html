@@ -57,7 +57,7 @@
 
 
 
-	<div class="row album-list-item" ng-repeat="album in albums"  ng-show="settings.searching">
+	<div class="row album-list-item" ng-repeat="album in searchedAlbums"  ng-show="settings.searching">
 		<div class="small-4 large-2 columns">
 			<img ng-src="{{album.pic}}"></img>
 			<span class="button tiny secondary show-for-small">Read Review</span>
