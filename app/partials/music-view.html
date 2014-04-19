@@ -15,8 +15,10 @@
 
 	<div class="row">
 		<div class="large-4 columns small-centered" style="text-align:center; margin-bottom:15px">
-			<button class="button secondary small" ng-click="sortBy('year')" style='-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;'unselectable='on'>
-            Sort by Year</button>
+			<button class="button secondary small" ng-click="sort('oldToNew')" style='-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;'unselectable='on'>
+            Oldest to Newest</button>
+            <button class="button secondary small" ng-click="sort('newToOld')" style='-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;'unselectable='on'>
+            Newest to Oldest</button>
 		</div>
 	</div>
 
@@ -25,7 +27,7 @@
 	<!-- Album View -->
 	<div id="albums-grid" ng-show="!settings.searching">
 
-        <div id="{{album.id}}" ng-repeat-start="album in albums" class="simple-album" ng-class="{faded: settings.selected && settings.selected != album}" ng-click="selectAlbum(album)">
+        <div id="{{album.id}}" ng-repeat-start="album in albums | orderBy:predicate:reverse" class="simple-album" ng-class="{faded: settings.selected && settings.selected != album}" ng-click="selectAlbum(album)">
             <img ng-src="{{album.pic}}">
             <h3>{{album.album}}</h3> <em>{{album.artist}}</em>
         </div>
@@ -62,7 +64,7 @@
 			<img ng-src="{{album.pic}}"></img>
 			<span class="button tiny secondary show-for-small">Read Review</span>
 		</div>
-		<div class="small-8 large-3 columns">
+		<div class="small-8 large-3 columns" ng-cloak>
 			<h2>{{album.album}}</h2><h4>{{album.artist}} — <i>{{album.year}}</i></h4>
 			<p ng-repeat="track in album.tracks" ng-mouseover="revealLength()"><i>{{track.title}}</i> <small class="track-length">{{track.length}}</small></p>
 		</div>

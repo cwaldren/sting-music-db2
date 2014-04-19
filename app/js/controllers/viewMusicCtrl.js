@@ -46,23 +46,22 @@
                     
         }
 
+        $scope.sort = function(pred) {
+            $scope.predicate = 'year';
+            $scope.reverse = (pred === 'newToOld');
+        }
+
         $scope.shouldShowPanel = function(index) {
             return ($scope.settings.albumHighlighted && (index == $scope.settings.currentAlbumDepth));
         }
 
-        $scope.sortBy = function(what) {
-
-            var albums;
-            if (what == "year") {
-                albums = $filter('orderBy')($scope.albums, 'year');
-                albums = $scope.settings.sortByYearReverse ? albums.reverse() : albums;
-                $scope.settings.sortByYearReverse = !$scope.settings.sortByYearReverse;
-                $scope.brokenAlbums = breakIntoRows(albums);
+    
+        
+        $scope.$watch('settings.searching', function(newValue, oldValue) {
+            if (newValue == false) {
+                $scope.searchedAlbums = [];
             }
-            
-        }
-
-   
+        });
 
          $scope.$watch('search', function(newValue, oldValue) {
              if (oldValue == newValue || newValue == "") 
