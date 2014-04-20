@@ -20,6 +20,8 @@
             $scope.albums = data;
            
                 
+        }).error(function() {
+            $settings.fetchDataSuccess = false;
         });
 
         $scope.isCorrectRow = function(album) {
