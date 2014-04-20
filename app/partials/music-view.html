@@ -13,18 +13,27 @@
 
 	</div>
 
-	<!-- <div class="row">
+	<div class="row">
 		<div class="large-4 columns small-centered" style="text-align:center; margin-bottom:15px">
 			<button class="button secondary small" ng-click="sort('oldToNew')" style='-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;'unselectable='on'>
             Oldest to Newest</button>
             <button class="button secondary small" ng-click="sort('newToOld')" style='-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;'unselectable='on'>
             Newest to Oldest</button>
 		</div>
-	</div> -->
+	</div>
 
     <h2 id="status-message" ng-if="!settings.fetchDataSuccess">Sorry, I couldn't fetch the album data :(</h2>
-        <div id="album-info-panel" ng-if="settings.selected">
-                 <div class="row">
+
+	<!-- Album View -->
+	<div id="albums-grid" ng-show="!settings.searching">
+
+        <div id="{{album.id}}" ng-repeat-start="album in albums | orderBy:predicate:reverse" class="simple-album" ng-class="{faded: settings.selected && settings.selected != album}" ng-click="selectAlbum(album)">
+            <img ng-src="{{album.pic}}">
+            <h3>{{album.album}}</h3> <em>{{album.artist}}</em>
+        </div>
+        <div ng-repeat-end class="panel" id="albumInfoPanel" ng-if="settings.selected && isCorrectRow(album)" ng-repeat-end>
+            
+            <div class="row">
                     <div class="small-3 columns">
                         <ul class="square">
                             <li ng-repeat="track in settings.selected.tracks">
@@ -42,38 +51,7 @@
                     </div>
                 </div>
         </div>
-	<!-- Album View -->
-	<div id="albums-grid" ng-show="!settings.searching && !settings.selected">
-    
-        <div id="{{album.id}}" ng-repeat-start="album in albums | orderBy:predicate:reverse" class="simple-album" ng-class="{faded: settings.selected && settings.selected != album}" ng-click="selectAlbum(album)">
-            <img ng-src="{{album.pic}}">
-            <h3>{{album.album}}</h3> <em>{{album.artist}}</em>
-        </div>
-        <div ng-repeat-end class="panel" id="albumInfoPanel" ng-if="settings.selected && isCorrectRow(album)" ng-repeat-end>
-            
-           <!--  <div class="row">
-                    <div class="small-3 columns">
-                        <ul class="square">
-                            <li ng-repeat="track in settings.selected.tracks">
-                                <a target="_blank" href="https://www.youtube.com/results?search_query={{track.trackname + ' ' + settings.selected.artist}}">{{track.trackname}}</a>
-                                <i class="track-length">{{track.tracktime}}</i>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="small-9 columns">
-                        <p class="review">
-                            {{settings.selected.review || 'No Review'}}
-                            <br>
-                            <cite style="float:right;" ng-if="settings.selected.reviewer">{{settings.selected.reviewer}}</cite>
-                        </p>
-                    </div>
-                </div> -->
-        </div>
-         
-
 	</div>
-
-   
 </div>
 		
 	
