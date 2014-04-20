@@ -32,7 +32,6 @@
 
             return ((row === 0) || (index === $scope.albums.length)) &&
             ((selectedIndex >= lowerBound) && (selectedIndex < index))
-
         }
      
 

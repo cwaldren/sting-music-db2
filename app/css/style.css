@@ -14,7 +14,9 @@ body {
 
 a {
   font-family: "Roboto Condensed", sans-serif; }
-
+#album-info-panel {
+  
+}
 #add-songs-button {
   float: right; }
 
